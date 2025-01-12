@@ -285,13 +285,14 @@
         
 
 <div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
+  <% var copyright_year = moment().format('YYYY'); %>
+  &copy; <% if (theme.footer.since && theme.footer.since != copyright_year) { %><%= theme.footer.since %> – <% } %><span itemprop="copyrightYear"><%= copyright_year %></span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="<%= theme.footer.icon.name %>"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">MSE</span>
+  <span class="author" itemprop="copyrightHolder"><%= theme.footer.copyright || config.author %></span>
+  本站采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">知识共享署名-非商业使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）</a> 进行许可。
+</div>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
